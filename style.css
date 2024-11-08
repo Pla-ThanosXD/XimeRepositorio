@@ -1,0 +1,106 @@
+/* Estilos generales */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f8ff;
+}
+
+/* Estilo para el título */
+.titulo {
+    font-family: 'Brush Script MT', cursive; /* Fuente cursiva bonita */
+    font-size: 40px;
+    color: #d502ff; /* Color rosa */
+    text-align: center;
+    margin-bottom: 30px; /* Espacio entre el título y la flor */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Sombra para darle un toque bonito */
+}
+
+/* Flor */
+.flor {
+    position: relative;
+    width: 200px;
+    height: 300px;
+}
+
+/* Pétalos */
+.petalo {
+    position: absolute;
+    width: 80px;
+    height: 150px;
+    background-color: #ff69b4;
+    border-radius: 50%;
+    opacity: 0; /* Inicialmente invisibles */
+    transform-origin: center center;
+    animation: aparecer 1s ease-out forwards;
+}
+
+.petalo-1 {
+    transform: rotate(0deg);
+    top: 0;
+    left: 60px;
+    animation-delay: 0s;
+}
+
+.petalo-2 {
+    transform: rotate(90deg);
+    top: 60px;
+    left: 0;
+    animation-delay: 1s;
+}
+
+.petalo-3 {
+    transform: rotate(180deg);
+    top: 120px;
+    left: 60px;
+    animation-delay: 2s;
+}
+
+.petalo-4 {
+    transform: rotate(270deg);
+    top: 60px;
+    left: 120px;
+    animation-delay: 3s;
+}
+
+/* Centro de la flor */
+.centro {
+    position: absolute;
+    top: 60px;
+    left: 60px;
+    width: 80px;
+    height: 80px;
+    background-color: yellow;
+    border-radius: 50%;
+    opacity: 0;
+    animation: aparecer 1s ease-out forwards;
+    animation-delay: 4s; /* Aparece después de los pétalos */
+}
+
+/* Tallo */
+.tallo {
+    position: absolute;
+    width: 10px;
+    height: 120px;
+    background-color: green;
+    left: 95px;
+    top: 200px;
+    opacity: 0;
+    animation: aparecer 1s ease-out forwards;
+    animation-delay: 5s; /* Aparece después de la flor */
+}
+
+/* Animación de aparición */
+@keyframes aparecer {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
